@@ -17,4 +17,9 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public void Freeze ()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
 }
