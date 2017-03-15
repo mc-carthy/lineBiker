@@ -18,6 +18,7 @@ public class Checkpoint : MonoBehaviour {
         if (other.CompareTag ("Player"))
         {
             sprRen.sprite = hitCheckPoint;
+            GameManager.Instance.HitCheckpoint ();
         }
     }
 
