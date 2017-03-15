@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 68846561905115668}
   - component: {fileID: 114106260219447656}
   m_Layer: 0
-  m_Name: line
+  m_Name: Bounce Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1938291271698270}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5776bf8055d6748d7b52f7d31c365f89, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -120,10 +120,10 @@ LineRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4290707456
       key1:
         serializedVersion: 2
-        rgba: 4278190080
+        rgba: 4290707456
       key2:
         serializedVersion: 2
         rgba: 0

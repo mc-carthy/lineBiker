@@ -1,17 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class LineManager : MonoBehaviour {
 
     [SerializeField]
-    private GameObject linePrefab;
+    private GameObject [] linePrefabs;
+    [SerializeField]
+    private Text lineButtonText;
 
+    private int currentLinePrefabIndex;
     private Line currentLine;
+
+    private void Start ()
+    {
+        currentLinePrefabIndex = 0;
+        lineButtonText.text = "Current Line : Regular Line";
+    }
 
 	private void Update ()
     {
         if (Input.GetMouseButtonDown (0))
         {
-            GameObject newLine = Instantiate (linePrefab) as GameObject;
+            GameObject newLine = Instantiate (linePrefabs [currentLinePrefabIndex]) as GameObject;
             currentLine = newLine.GetComponent<Line> ();
         }
 
@@ -26,6 +36,22 @@ public class LineManager : MonoBehaviour {
             currentLine.UpdateLine (mousePos);
         }
 
+        if (Input.GetKeyDown (KeyCode.UpArrow))
+        {
+            CycleLineType ();
+        }
+    }
+
+    public void CycleLineType ()
+    {
+        currentLinePrefabIndex++;
+
+        if (currentLinePrefabIndex > (linePrefabs.Length - 1))
+        {
+            currentLinePrefabIndex = 0;
+        }
+
+        lineButtonText.text = "Current Line : " + linePrefabs [currentLinePrefabIndex].gameObject.name;
     }
 
 }
